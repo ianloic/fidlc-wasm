@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>fidlc</title>
+<script src="fidlc.js" async></script>
+<style>
+body {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  height: 100vh;
+}
+textarea {
+  flex-grow: 1;
+}
+</style>
+</head>
+<body>
+<textarea id="fidl">
+library fidl.test;
+
+protocol Foo {
+  Bar(int32 x, float32 y) -&gt; (string z);
+};
+</textarea>
+<button id="compile" onclick="compile()" disabled>&rarr;<br>Compile<br>&rarr;</button>
+<textarea id="json" readonly></textarea>
+</body>
